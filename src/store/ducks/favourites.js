@@ -17,12 +17,10 @@ export default function favoritesReducer(state = INITIAL_STATE, action) {
 
             if(favourites.find(fav => fav === action.payload.episode_id))
             {
-                console.log("Removing fav");
                 favourites = favourites.filter(fav => fav !== action.payload.episode_id)
             }
             else
             {
-                console.log("Adding fav");
                 favourites = [...favourites, action.payload.episode_id];
             }
 

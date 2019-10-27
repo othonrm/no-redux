@@ -11,11 +11,8 @@ function App(props) {
     // Map state to props
     props = {...props, ...useStore().state, ...EpisodesActions };
 
-
     // Declare dispatch
     EpisodesActions.dispatch = useStore().dispatch;
-
-    console.log(props);
 
     useEffect(() => {
 
