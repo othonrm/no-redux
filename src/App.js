@@ -3,19 +3,17 @@ import React, { useEffect, lazy, Suspense } from 'react';
 import { useStore } from './store';
 
 import { Creators as EpisodesActions } from './store/ducks/episodes';
-import { Creators as FavouritesActions } from './store/ducks/favourites';
 
 const EpisodesList = lazy(() => import('./components/EpisodeList'));
 
 function App(props) {
 
     // Map state to props
-    props = {...props, ...useStore().state, ...EpisodesActions, ...FavouritesActions };
+    props = {...props, ...useStore().state, ...EpisodesActions };
 
 
     // Declare dispatch
     EpisodesActions.dispatch = useStore().dispatch;
-    FavouritesActions.dispatch = useStore().dispatch;
 
     console.log(props);
 
