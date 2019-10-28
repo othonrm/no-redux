@@ -9,7 +9,7 @@ export const INITIAL_STATE = {
     episodes: []
 }
 
-export default function episodesReducer(state, action) {
+export function episodesReducer(state, action) {
     switch (action.type) {
         case Types.REQUEST:
             return { ...state, episodes: action.payload.episodes };

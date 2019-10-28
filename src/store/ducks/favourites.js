@@ -10,7 +10,7 @@ export const INITIAL_STATE = {
     favourites: []
 }
 
-export default function favoritesReducer(state = INITIAL_STATE, action) {
+export function favoritesReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
         case Types.TOGGLE:
             let { favourites } = state;
